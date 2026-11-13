@@ -1,0 +1,19 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+:root { color-scheme: dark; }
+body { background:#07090d; color:#d8d2c4; font-family: var(--f-type), monospace; }
+.panel { position:relative; border:3px solid #d8d2c4; background:#0b0e13; box-shadow:6px 6px 0 #000; overflow:hidden; }
+.panel::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.35; mix-blend-mode:multiply;
+  background-image:radial-gradient(#000 1px, transparent 1.4px); background-size:5px 5px; }
+.tint-blue { background:linear-gradient(160deg,#16222d,#0b0e13 70%); }
+.tint-amber { background:linear-gradient(200deg,#3a2a10,#0b0e13 75%); }
+.caption { background:#e6d8a8; color:#14110a; border:2px solid #000; padding:.6rem .9rem; font-family:var(--f-type); box-shadow:4px 4px 0 #000; }
+.rain { position:absolute; inset:-20% 0 0 0; pointer-events:none; opacity:.35;
+  background-image:repeating-linear-gradient(105deg, transparent 0 14px, rgba(150,180,210,.5) 14px 15px);
+  background-size:60px 100%; animation:rain .7s linear infinite; }
+@keyframes rain { to { background-position:-18px 60px; } }
+.type-in { overflow:hidden; white-space:nowrap; width:0; animation:typing 2.4s steps(40) .4s forwards; }
+@keyframes typing { to { width:100%; } }
+.sfx { font-family:var(--f-title); text-shadow:3px 3px 0 #000; transform:rotate(-4deg); }
+.field { width:100%; background:#0b0e13; border:2px solid #d8d2c4; padding:.6rem .8rem; color:#d8d2c4; }
+.field:focus-visible, a:focus-visible, button:focus-visible { outline:3px solid #d9a441; outline-offset:2px; }
+@media (prefers-reduced-motion: reduce) { .rain { animation:none } .type-in { animation:none; width:100% } }
